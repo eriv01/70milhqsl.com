@@ -14,11 +14,17 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2036706137171358');
-fbq('track', 'PageView');
+fbq('init','903461795842266');
+fbq('track','PageView');
+fbq('init','2036706137171358');
+fbq('track','PageView');
 </script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=903461795842266&ev=PageView&noscript=1"/>
+</noscript>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2036706137171358&ev=PageView&noscript=1"
 /></noscript>
@@ -411,7 +417,7 @@ footer p{font-size:.7rem;color:var(--muted);line-height:1.8;max-width:360px;marg
         <div class="what-item"><span class="check">♾️</span> Acesso vitalício — sem mensalidade</div>
         <div class="what-item"><span class="check">⚡</span> Entrega imediata após pagamento</div>
       </div>
-      <a href="https://pay.wiapy.com/fOfCOdeOce" class="buy-btn">⚡ QUERO ACESSO AGORA — R$17,00</a>
+      <a href="https://pay.wiapy.com/l7lcSf1NX-" class="buy-btn">⚡ QUERO ACESSO AGORA — R$17,00</a>
       <div class="secure-badges">
         <div class="sec-badge">🔒 Pagamento seguro</div>
         <div class="sec-badge">⚡ Acesso imediato</div>
@@ -509,6 +515,7 @@ function initFan(){
   function swapCard(ci){const card=cards[ci];if(!card)return;const img=card.querySelector('img');idx[ci]=(idx[ci]+1)%images.length;const src=images[idx[ci]];const preload=cache[src]||new Image();cache[src]=preload;preload.src=src;const doSwap=()=>{img.style.opacity='0';setTimeout(()=>{img.src=src;img.style.opacity='1';},420);};preload.complete?doSwap():(preload.onload=doSwap);}
   setTimeout(()=>{let q=[];function next(){if(!q.length)q=[0,1,2,3,4].sort(()=>Math.random()-.5);swapCard(q.pop());setTimeout(next,1800+Math.random()*1000);}('requestIdleCallback'in window)?requestIdleCallback(next,{timeout:3000}):setTimeout(next,200);},1400);
 }
+
 function initCarousel(){
   const outer=document.getElementById('carouselOuter');const track=document.getElementById('carTrack');const hint=document.getElementById('pauseHint');
   if(!outer||!track)return;let paused=false;
@@ -516,12 +523,15 @@ function initCarousel(){
   document.addEventListener('visibilitychange',()=>{if(document.hidden){track.style.animationPlayState='paused';}else if(!paused){track.style.animationPlayState='running';}});
   if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!paused)track.style.animationPlayState=e.isIntersecting?'running':'paused';});},{threshold:0.1});io.observe(outer);}
 }
+
 function initFaq(){
   document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');},{passive:true});});
 }
+
 function initAnchors(){
   document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
 }
+
 if('requestIdleCallback'in window){
   requestIdleCallback(()=>{initFan();initCarousel();initFaq();initAnchors();},{timeout:2000});
 }else{
@@ -530,5 +540,3 @@ if('requestIdleCallback'in window){
 </script>
 </body>
 </html>
-pagina hqs18.txt
-A mostrar pagina hqs18.txt.
