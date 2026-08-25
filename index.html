@@ -47,6 +47,81 @@
       overflow-x: hidden;
     }
 
+    /* PRESELL MODAL (+18) */
+    .presell-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(10, 10, 12, 0.98);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .presell-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px 20px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .presell-badge {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--red-accent);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      font-weight: 800;
+      font-size: 14px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .presell-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .presell-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .presell-btn {
+      width: 100%;
+      background: linear-gradient(180deg, #22c55e 0%, #15803d 100%);
+      color: #fff;
+      font-weight: 800;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .presell-btn:active {
+      transform: scale(0.98);
+    }
+
     .main-wrapper {
       width: 100%;
       max-width: var(--max-w);
@@ -644,6 +719,16 @@
 </head>
 <body>
 
+<!-- PRESELL / VERIFICAÇÃO DE IDADE -->
+<div class="presell-overlay" id="presellOverlay">
+  <div class="presell-card">
+    <span class="presell-badge">🔞 CONTEÚDO ADULTO</span>
+    <h2 class="presell-title">VERIFICAÇÃO DE IDADE</h2>
+    <p class="presell-desc">Este acervo contém títulos de classificação exclusiva para maiores de 18 anos. Confirme sua idade para prosseguir.</p>
+    <button class="presell-btn" onclick="confirmAge()">SOU MAIOR DE 18 ANOS - ENTRAR</button>
+  </div>
+</div>
+
 <div class="main-wrapper">
 
   <!-- TOP BAR -->
@@ -819,6 +904,13 @@
 </div><!-- /main-wrapper -->
 
 <script>
+  function confirmAge() {
+    var overlay = document.getElementById('presellOverlay');
+    if (overlay) {
+      overlay.style.display = 'none';
+    }
+  }
+
   document.getElementById('topDate').textContent =
     new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});
   document.getElementById('footYear').textContent = new Date().getFullYear();
